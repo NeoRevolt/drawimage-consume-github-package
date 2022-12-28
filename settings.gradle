@@ -1,0 +1,25 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/NeoRevolt/drawimage-demo-before-publish")
+            credentials {
+                username = 'NeoRevolt'
+                password = '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'
+            }
+        }
+//        maven { url 'https://jitpack.io' }
+    }
+}
+rootProject.name = "Imlement Maven"
+include ':app'

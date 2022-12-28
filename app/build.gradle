@@ -1,0 +1,66 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+}
+
+android {
+    namespace 'com.example.imlementmaven'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.imlementmaven"
+        minSdk 21
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+//    repositories {
+//        maven {
+//            name = "GitHubPackages"
+//
+//            // Replace GITHUB_USERID with your personal or organisation user ID and
+//            // REPOSITORY with the name of the repository on GitHub
+//            url = uri("https://maven.pkg.github.com/NeoRevolt/drawimage-demo-before-publish")
+//
+//            credentials {
+//                username = 'NeoRevolt'
+//                password = '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'
+//            }
+//        }
+//    }
+}
+
+
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+//    implementation 'com.github.NeoRevolt:demo-drawimage-photoeditor-lib:1.0.0'
+    implementation 'com.github.neorevolt:draw-image:0.0.2'
+}
